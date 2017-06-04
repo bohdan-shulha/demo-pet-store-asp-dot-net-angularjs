@@ -1,6 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('petStore.screens.owners', [
+	angular.module('petStore.screens.owners', [
+		'petStore.core.resources',
     ]);
 })();

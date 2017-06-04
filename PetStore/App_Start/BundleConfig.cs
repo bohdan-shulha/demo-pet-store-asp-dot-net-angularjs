@@ -24,12 +24,13 @@ namespace PetStore
             bundles.Add(new ScriptBundle("~/bundles/vendor-scripts").Include(
                 "~/Scripts/modernizr-{version}.js",
                 "~/Scripts/angular.js",
+                "~/Scripts/angular-resource.js",
                 "~/Scripts/angular-ui/ui-bootstrap.js",
                 "~/Scripts/angular-ui-router.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/core/resources/resources.module.js",
-                "~/Scripts/app/core/resources/owner.factory.js",
+                "~/Scripts/app/core/resources/owners.factory.js",
 
                 "~/Scripts/app/core/core.module.js",
 

@@ -8,9 +8,9 @@
 			controller: ownerList,
 		});
 
-    ownerList.$inject = ['$scope'];
+    ownerList.$inject = ['$scope', 'Owners'];
 
-    function ownerList($scope) {
+    function ownerList($scope, Owners) {
         $scope.title = 'owner_list';
 
         activate();
