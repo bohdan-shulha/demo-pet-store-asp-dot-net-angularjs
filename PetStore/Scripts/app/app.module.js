@@ -14,5 +14,10 @@
 			url: '/owners',
 			template: '<owners-screen></owners-screen>',
 		});
+
+		$stateProvider.state('pets', {
+			url: '/pets/{ownerId}',
+			template: '<pets-screen></pets-screen>',
+		});
 	}]);
 })();

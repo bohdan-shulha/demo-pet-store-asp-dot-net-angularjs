@@ -23,6 +23,11 @@
 						"petsCount": 0,
 					},
 				]);
+			},
+			save: function (params, success) {
+				params.id = 1;
+
+				success(params);
 			}
 		};
     }

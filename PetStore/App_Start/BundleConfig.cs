@@ -31,6 +31,7 @@ namespace PetStore
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/core/resources/resources.module.js",
                 "~/Scripts/app/core/resources/owners.factory.js",
+                "~/Scripts/app/core/resources/pets.factory.js",
 
                 "~/Scripts/app/core/core.module.js",
 
@@ -38,6 +39,9 @@ namespace PetStore
                 "~/Scripts/app/screens/owners/new_owner_form.component.js",
                 "~/Scripts/app/screens/owners/owner_list.component.js",
                 "~/Scripts/app/screens/owners/owners.component.js",
+
+                "~/Scripts/app/screens/pets/pets.module.js",
+                "~/Scripts/app/screens/pets/pets.component.js",
 
                 "~/Scripts/app/screens/screens.module.js",
 

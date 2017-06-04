@@ -1,0 +1,20 @@
+﻿<table class="table table-striped">
+	<tr>
+		<th>Person</th>
+		<td>Pets</td>
+		<td><!-- delete an owner --></td>
+	</tr>
+	<tr ng-repeat="owner in owners">
+		<td>
+			<a ui-sref="pets({ ownerId: owner.id })">
+				{{ owner.name }}
+			</a>
+		</td>
+		<td>
+			{{ owner.petsCount > 0 ? owner.petsCount : "has no pets :(" }}
+		</td>
+		<td>
+			<button>Delete an owner</button>
+		</td>
+	</tr>
+</table>

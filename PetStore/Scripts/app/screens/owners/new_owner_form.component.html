@@ -1,0 +1,16 @@
+﻿<form novalidate="novalidate" class="form-inline">
+  <div class="form-group">
+	  <input
+		  type="text"
+		  class="form-control"
+		  ng-model="ownerName"
+		  placeholder="Owner name, like Michael" />
+  </div>
+  <button 
+    type="button" 
+	class="btn btn-primary" 
+	ng-disabled="ownerName.length == 0" 
+	title="Please enter the owner name" 
+	ng-click="saveOwner(ownerName)"
+  >Add</button>
+</form>

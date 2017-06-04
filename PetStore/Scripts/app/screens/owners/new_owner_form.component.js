@@ -4,13 +4,22 @@
     angular
         .module('petStore.screens.owners')
 		.component('newOwnerForm', {
-			template: '<input type="text" placeholder="Owner name, like Michael"><button type="button">Add</button>',
+			// template: '<input type="text" ng-model="ownerName" placeholder="Owner name, like Michael"><button type="button" class="btn btn-primary" ng-disabled="ownerName.length == 0" title="Please enter the owner name" ng-click="saveOwner(ownerName)">Add</button>',
+			templateUrl: 'Scripts/app/screens/owners/new_owner_form.component.html',
 			controller: newOwnerForm,
 		});
 
-    newOwnerForm.$inject = ['$scope'];
+    newOwnerForm.$inject = ['$scope', 'Owners'];
 
-    function newOwnerForm($scope) {
-        $scope.title = 'new_owner_form';
+    function newOwnerForm($scope, Owners) {
+		$scope.ownerName = '';
+
+		$scope.saveOwner = function (ownerName) {
+			Owners.save({
+				name: ownerName,
+			}, function () {
+				$scope.ownerName = '';
+			});
+		}
 	}
 })();
