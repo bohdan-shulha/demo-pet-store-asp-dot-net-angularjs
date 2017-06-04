@@ -4,17 +4,17 @@
     angular
         .module('petStore.screens.owners')
 		.component('ownerList', {
-			template: '<table><tr><td>owners table</td></tr></table>',
+			template: '<table><tr ng-repeat="owner in owners"><td>{{ owner.name }}</td><td>{{ owner.petsCount > 0 ? owner.petsCount : "has no pets :(" }}</td></tr></table>',
 			controller: ownerList,
 		});
 
     ownerList.$inject = ['$scope', 'Owners'];
 
     function ownerList($scope, Owners) {
-        $scope.title = 'owner_list';
+		$scope.owners = [];
 
-        activate();
-
-        function activate() { }
+		Owners.query({}, function(owners) {
+			$scope.owners = owners;
+		});
     }
 })();
