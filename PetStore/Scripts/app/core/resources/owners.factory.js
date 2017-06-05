@@ -8,7 +8,7 @@
     Owners.$inject = ['$resource'];
 
 	function Owners($resource) {
-		// return $resource('api/owners/:id');
+		return $resource('api/Owners/:id');
 		return {
 			query: function (params, success) {
 				success([
