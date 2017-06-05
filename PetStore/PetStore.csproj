@@ -259,6 +259,10 @@
     <Compile Include="Migrations\201706051053137_AddPetOwnerId.Designer.cs">
       <DependentUpon>201706051053137_AddPetOwnerId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706051150264_MakePetNameRequired.cs" />
+    <Compile Include="Migrations\201706051150264_MakePetNameRequired.Designer.cs">
+      <DependentUpon>201706051150264_MakePetNameRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -308,6 +312,8 @@
     <Content Include="Scripts\app\screens\pets\new_pet_form.component.js" />
     <Content Include="Scripts\app\screens\pets\pets.component.js" />
     <Content Include="Scripts\app\screens\pets\pets.module.js" />
+    <Content Include="Scripts\app\screens\pets\pet_list.component.html" />
+    <Content Include="Scripts\app\screens\pets\pet_list.component.js" />
     <Content Include="Scripts\app\screens\screens.module.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706051053137_AddPetOwnerId.resx">
       <DependentUpon>201706051053137_AddPetOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051150264_MakePetNameRequired.resx">
+      <DependentUpon>201706051150264_MakePetNameRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
