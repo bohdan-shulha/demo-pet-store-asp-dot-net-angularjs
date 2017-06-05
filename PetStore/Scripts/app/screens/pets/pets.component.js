@@ -4,17 +4,26 @@
     angular
         .module('petStore.screens.pets')
 		.component('petsScreen', {
-			template: 'list of pets',
+			template: '<h1>{{ owner.name }}\' pets</h1><new-pet-form owner-id="owner.id"></new-pet-form><pets-list></pets-list>',
 			controller: petsScreen,
 		});
 
-    petsScreen.$inject = ['$scope'];
+    petsScreen.$inject = ['$scope', '$stateParams', 'Owners'];
 
-    function petsScreen($scope) {
-        $scope.title = 'pets';
+	function petsScreen($scope, $stateParams, Owners) {
+		var ctrl = this;
 
-        activate();
+		ctrl.$scope = $scope;
 
-        function activate() { }
+		$scope.owner = {
+			id: $stateParams.ownerId,
+			name: '',
+		};
+
+		Owners.get({
+			id: $stateParams.ownerId
+		}, function (owner) {
+			$scope.owner.name = owner.name
+		});
     }
 })();

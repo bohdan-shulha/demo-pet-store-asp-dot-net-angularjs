@@ -239,6 +239,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\PetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,6 +254,10 @@
     <Compile Include="Migrations\201706042148015_AddPets.cs" />
     <Compile Include="Migrations\201706042148015_AddPets.Designer.cs">
       <DependentUpon>201706042148015_AddPets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051053137_AddPetOwnerId.cs" />
+    <Compile Include="Migrations\201706051053137_AddPetOwnerId.Designer.cs">
+      <DependentUpon>201706051053137_AddPetOwnerId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -299,6 +304,8 @@
     <Content Include="Scripts\app\screens\owners\owners.module.js" />
     <Content Include="Scripts\app\screens\owners\owner_list.component.html" />
     <Content Include="Scripts\app\screens\owners\owner_list.component.js" />
+    <Content Include="Scripts\app\screens\pets\new_pet_form.component.html" />
+    <Content Include="Scripts\app\screens\pets\new_pet_form.component.js" />
     <Content Include="Scripts\app\screens\pets\pets.component.js" />
     <Content Include="Scripts\app\screens\pets\pets.module.js" />
     <Content Include="Scripts\app\screens\screens.module.js" />
@@ -405,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706042148015_AddPets.resx">
       <DependentUpon>201706042148015_AddPets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051053137_AddPetOwnerId.resx">
+      <DependentUpon>201706051053137_AddPetOwnerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

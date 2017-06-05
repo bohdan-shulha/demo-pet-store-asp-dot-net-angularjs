@@ -8,16 +8,6 @@
     Pets.$inject = ['$resource'];
 
 	function Pets($resource) {
-		// return $resource('api/pets/:id')
-		return {
-			query: function (params, success) {
-				success([
-					{
-						"id": 1,
-						"name": "Jeff's dog",
-					},
-				]);
-			},
-		};
+		return $resource('api/Pets/:id')
     }
 })();

@@ -41,6 +41,7 @@ namespace PetStore
                 "~/Scripts/app/screens/owners/owners.component.js",
 
                 "~/Scripts/app/screens/pets/pets.module.js",
+                "~/Scripts/app/screens/pets/new_pet_form.component.js",
                 "~/Scripts/app/screens/pets/pets.component.js",
 
                 "~/Scripts/app/screens/screens.module.js",

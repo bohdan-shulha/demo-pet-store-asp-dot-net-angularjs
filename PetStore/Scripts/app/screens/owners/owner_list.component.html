@@ -13,8 +13,12 @@
 		<td>
 			{{ owner.petsCount > 0 ? owner.petsCount : "has no pets :(" }}
 		</td>
-		<td>
-			<button>Delete an owner</button>
+		<td class="text-right">
+			<button class="btn btn-danger"
+					type="button" 
+					alt="Delete an owner" 
+					ng-click="deleteOwner(owner)"
+			>&times;</button>
 		</td>
 	</tr>
 </table>

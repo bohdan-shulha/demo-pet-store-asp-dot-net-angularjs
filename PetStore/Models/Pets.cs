@@ -12,6 +12,17 @@ namespace PetStore.Models
         public string Name { get; set; }
 
         [Required]
-        public Owner Owner { get; set; }
+        public int OwnerID { get; set; }
+
+        public virtual Owner Owner { get; set; }
+    }
+
+    public class NewPetDTO
+    {
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public int OwnerID { get; set; }
     }
 }

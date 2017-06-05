@@ -1,0 +1,14 @@
+﻿<form novalidate="novalidate" class="form-inline" ng-submit="$ctrl.savePet()">
+	<div class="form-group">
+		<input type="text"
+			   class="form-control"
+			   ng-model="petName"
+			   placeholder="Pet name, like The Hedgehog" />
+	</div>
+	<button type="submit"
+			class="btn btn-primary"
+			ng-disabled="petName.length == 0"
+			title="{{ petName.length == 0 ? 'Please enter the pet name' : 'Add a pet to the directory' }}">
+		Add
+	</button>
+</form>
