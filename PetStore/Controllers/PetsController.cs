@@ -19,9 +19,16 @@ namespace PetStore.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Pets
-        public IQueryable<Pet> GetPets(int ownerId)
+        public IQueryable<PetListDTO> GetPets(int ownerId)
         {
-            return db.Pets.Where(p => p.Owner.Id == ownerId);
+            return db.Pets
+                .Where(p => p.Owner.Id == ownerId)
+                .OrderBy(p => p.Name)
+                .Select(p => new PetListDTO
+                {
+                    ID = p.Id,
+                    Name = p.Name
+                });
         }
 
         // GET: api/Pets/5

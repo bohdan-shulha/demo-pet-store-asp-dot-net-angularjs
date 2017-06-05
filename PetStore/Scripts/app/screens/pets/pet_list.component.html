@@ -1,1 +1,17 @@
-﻿pets {{ $ctrl.ownerId }}!!!
+﻿<table class="table table-striped">
+	<tr>
+		<th>Pet Name</th>
+		<th><!-- delete a pet --></th>
+	</tr>
+	<tr ng-repeat="pet in pets">
+		<td>{{ pet.name }}</td>
+		<td class="text-right">
+			<button class="btn btn-danger" ng-click="$ctrl.deletePet(pet)">&times;</button>
+		</td>
+	</tr>
+	<tr ng-show="pets.length == 0">
+		<td colspan="2">
+			This being has no pets :(
+		</td>
+	</tr>
+</table>

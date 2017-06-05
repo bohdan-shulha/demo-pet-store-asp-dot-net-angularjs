@@ -6,12 +6,17 @@ using System.Web;
 
 namespace PetStore.Models
 {
-    public class Owner
+    public partial class Owner
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
         public virtual ICollection<Pet> Pets { get; set; }
+    }
+
+    public class OwnerDTO
+    {
+        public string Name { get; set; }
     }
 
     public class OwnerListDTO

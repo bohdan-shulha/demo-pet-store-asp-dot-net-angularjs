@@ -4,7 +4,7 @@
     angular
         .module('petStore.screens.pets')
 		.component('petsScreen', {
-			template: '<h1>{{ owner.name }}\' pets</h1><new-pet-form owner-id="owner.id"></new-pet-form><pets-list></pets-list>',
+			templateUrl: 'Scripts/app/screens/pets/pets.component.html',
 			controller: petsScreen,
 		});
 
@@ -19,11 +19,15 @@
 			id: $stateParams.ownerId,
 			name: '',
 		};
+		
+		$scope.onPetAdd = function () {
+			$scope.listCtrl.refresh();
+		}
 
 		Owners.get({
 			id: $stateParams.ownerId
 		}, function (owner) {
 			$scope.owner.name = owner.name
 		});
-    }
+	}
 })();

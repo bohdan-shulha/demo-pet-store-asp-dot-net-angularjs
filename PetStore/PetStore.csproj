@@ -310,6 +310,7 @@
     <Content Include="Scripts\app\screens\owners\owner_list.component.js" />
     <Content Include="Scripts\app\screens\pets\new_pet_form.component.html" />
     <Content Include="Scripts\app\screens\pets\new_pet_form.component.js" />
+    <Content Include="Scripts\app\screens\pets\pets.component.html" />
     <Content Include="Scripts\app\screens\pets\pets.component.js" />
     <Content Include="Scripts\app\screens\pets\pets.module.js" />
     <Content Include="Scripts\app\screens\pets\pet_list.component.html" />

@@ -31,10 +31,16 @@ namespace PetStore.Controllers
         }
 
         // GET: api/Owners/5
-        [ResponseType(typeof(Owner))]
+        [ResponseType(typeof(OwnerDTO))]
         public async Task<IHttpActionResult> GetOwner(int id)
         {
-            Owner owner = await db.Owners.FindAsync(id);
+            OwnerDTO owner = await db.Owners
+                .Where(o => o.Id == id)
+                .Select(o => new OwnerDTO
+                {
+                    Name = o.Name
+                })
+                .FirstAsync();
             if (owner == null)
             {
                 return NotFound();

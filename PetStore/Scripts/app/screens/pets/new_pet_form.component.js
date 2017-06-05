@@ -6,6 +6,7 @@
 		.component('newPetForm', {
 			bindings: {
 				ownerId: "<",
+				onPetAdd: '<',
 			},
 			templateUrl: "Scripts/app/screens/pets/new_pet_form.component.html",
 			controller: newPetForm,
@@ -18,8 +19,6 @@
 
 		ctrl.$scope = $scope;
 		ctrl.Pets = Pets;
-
-		ctrl.resetScope();
 	}
 
 	newPetForm.prototype.resetScope = function () {
@@ -32,6 +31,12 @@
 		ctrl.Pets.save({
 			name: ctrl.$scope.petName,
 			ownerID: +ctrl.ownerId,
-		}, ctrl.resetScope);
+		}, function () {
+			ctrl.resetScope();
+
+			if (ctrl.onPetAdd != null) {
+				ctrl.onPetAdd();
+			}
+		});
 	}
 })();
