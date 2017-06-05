@@ -305,6 +305,7 @@
     <Content Include="Scripts\app\core\resources\pets.factory.js" />
     <Content Include="Scripts\app\core\resources\resources.module.js" />
     <Content Include="Scripts\app\screens\owners\new_owner_form.component.js" />
+    <Content Include="Scripts\app\screens\owners\owners.component.html" />
     <Content Include="Scripts\app\screens\owners\owners.component.js" />
     <Content Include="Scripts\app\screens\owners\owners.module.js" />
     <Content Include="Scripts\app\screens\owners\owner_list.component.html" />

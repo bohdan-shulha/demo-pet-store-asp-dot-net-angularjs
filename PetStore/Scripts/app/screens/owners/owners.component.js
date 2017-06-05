@@ -4,7 +4,7 @@
     angular
 		.module('petStore.screens.owners')
 		.component('ownersScreen', {
-			template: '<new-owner-form on-owner-add="onOwnerAdd"></new-owner-form> <owner-list ctrl="listCtrl"></owner-list>',
+			templateUrl: 'Scripts/app/screens/owners/owners.component.html',
 			controller: ownersScreen,
 		});
 
