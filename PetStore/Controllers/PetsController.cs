@@ -19,9 +19,9 @@ namespace PetStore.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Pets
-        public IQueryable<PetListDTO> GetPets(int ownerId)
+        public async Task<PagedDTO<PetListDTO>> GetPets(int ownerId, int page = 1)
         {
-            return db.Pets
+            var query = db.Pets
                 .Where(p => p.Owner.Id == ownerId)
                 .OrderBy(p => p.Name)
                 .Select(p => new PetListDTO
@@ -29,6 +29,12 @@ namespace PetStore.Controllers
                     ID = p.Id,
                     Name = p.Name
                 });
+
+            return new PagedDTO<PetListDTO>
+            {
+                TotalCount = await query.CountAsync(),
+                Data = await query.Skip((page - 1) * 3).Take(3).ToListAsync()
+            };
         }
 
         // GET: api/Pets/5

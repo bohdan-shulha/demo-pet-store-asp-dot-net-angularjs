@@ -18,16 +18,24 @@ namespace PetStore.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Owners
-        public IQueryable<OwnerListDTO> GetOwners()
+        public async Task<PagedDTO<OwnerListDTO>> GetOwners(int page = 1)
         {
             //return db.Owners.OrderBy(o => o.Name);
 
-            return db.Owners.Select(o => new OwnerListDTO
+            var query = db.Owners
+                .Select(o => new OwnerListDTO
+                {
+                    Id = o.Id,
+                    Name = o.Name,
+                    PetCount = o.Pets.Count()
+                })
+                .OrderBy(o => o.Name);
+
+            return new PagedDTO<OwnerListDTO>
             {
-                Id = o.Id,
-                Name = o.Name,
-                PetCount = o.Pets.Count()
-            }).OrderBy(o => o.Name);
+                TotalCount = await query.CountAsync(),
+                Data = await query.Skip((page - 1) * 3).Take(3).ToListAsync()
+            };
         }
 
         // GET: api/Owners/5

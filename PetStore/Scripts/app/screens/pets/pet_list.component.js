@@ -21,6 +21,8 @@
 		ctrl.Pets = Pets;
 
 		$scope.pets = [];
+		$scope.totalCount = 0;
+		$scope.page = 1;
 
 		$attrs.$observe("ownerId", function () {
 			ctrl.refresh();
@@ -38,8 +40,9 @@
 	petList.prototype.refresh = function () {
 		var ctrl = this;
 
-		ctrl.Pets.query({ ownerId: ctrl.ownerId }, function (pets) {
-			ctrl.$scope.pets = pets;
+		ctrl.Pets.query({ ownerId: ctrl.ownerId, page: ctrl.$scope.page }, function (pets) {
+			ctrl.$scope.totalCount = pets.totalCount;
+			ctrl.$scope.pets = pets.data;
 		});
 	};
 

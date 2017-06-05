@@ -25,7 +25,8 @@ namespace PetStore
                 "~/Scripts/modernizr-{version}.js",
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-resource.js",
-                "~/Scripts/angular-ui/ui-bootstrap.js",
+                // "~/Scripts/angular-ui/ui-bootstrap.js",
+                "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
                 "~/Scripts/angular-ui-router.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(

@@ -8,6 +8,10 @@
     Pets.$inject = ['$resource'];
 
 	function Pets($resource) {
-		return $resource('api/Pets/:id')
+		return $resource('api/Pets/:id', null, {
+			query: {
+				method: 'GET',
+			},
+		});
     }
 })();

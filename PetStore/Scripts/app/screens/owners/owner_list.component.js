@@ -7,7 +7,7 @@
 			bindings: {
 				ctrl: '=',
 			},
-			// TODO: use webpack2 require here or systemjs/amd/etc alternative
+			// TODO: use webpack2's "require" here or systemjs/amd/etc alternative
 			templateUrl: 'Scripts/app/screens/owners/owner_list.component.html',
 			controller: ownerList,
 		});
@@ -21,6 +21,7 @@
 		ctrl.Owners = Owners;
 
 		$scope.owners = [];
+		$scope.page = 1;
 
 		$attrs.$observe('ctrl', function () {
 			ctrl.ctrl = {
@@ -35,13 +36,18 @@
 		$scope.deleteOwner = function (owner) {
 			ctrl.deleteOwner(owner);
 		}
+
+		$scope.goToPage = function (page) {
+			ctrl.refresh();
+		}
 	}
 
 	ownerList.prototype.refresh = function () {
 		var ctrl = this;
 
-		ctrl.Owners.query({}, function (owners) {
-			ctrl.$scope.owners = owners;
+		ctrl.Owners.query({ page: ctrl.$scope.page }, function (owners) {
+			ctrl.$scope.totalCount = owners.totalCount;
+			ctrl.$scope.owners = owners.data;
 		});
 	}
 
